@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Tracing;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Suli
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // LAliga vs Eredivise
+            Random rnd = new Random();
+            string[] Focicsapat1 = { "Barcelona", "Real Madrid", "Villareal", "Valencia", "Atlético Madrid" };
+            string[] Focicsapat2 = { "Ajax", "Feyenoord", "NAC Breda", "PSV Eindhoven", "Nijmegen" };
+
+            //Random index generate
+            int pIndex = rnd.Next(Focicsapat1.Length);
+            int nIndex = rnd.Next(Focicsapat2.Length);
+
+            //Result Display
+            Console.WriteLine("Meccs: ");
+            Console.WriteLine("Első csapat {0}", Focicsapat1[pIndex]);
+            Console.WriteLine("VS");
+            Console.WriteLine("Második csapat {0}", Focicsapat2[nIndex]);
+
+            //Dobókocka
+            int playerRandomNum;
+            int playerRandomNum2;
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Dobókocka");
+                Console.ReadKey();
+                playerRandomNum = random.Next(0, 7);
+                playerRandomNum2 = random.Next(0, 7);
+                Console.WriteLine("Első csapat gólja: " + playerRandomNum);
+                Console.WriteLine("Első csapat gólja: " + playerRandomNum2);
+            }
+        }
+    }
+}
